@@ -17,11 +17,12 @@ const ArticleCard = ({article}) => {
                     </section>
             </div>
             <div id='articleCardButtonContainer'>
-                <button type="button" className="px-6 py-3.5 text-base font-bold text-white bg-button-red hover:bg-button-red-hover rounded-lg text-center hover:shadow-xl">View Article</button>
-                <button>
+                    <button type="button" className="px-6 py-3.5 text-base font-bold text-white bg-button-red hover:bg-button-red-hover rounded-lg text-center hover:shadow-xl">View Article</button>
+                
+                    <button>
                     <img src="src/assets/Like.png" alt="Thumbs Up; like Button" className='h-11'/>
                     <p className='text-black font-bold'>Likes:{article.votes}</p>
-                </button>
+                    </button>
             </div>
         </section>
         </>
