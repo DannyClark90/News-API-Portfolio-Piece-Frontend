@@ -1,0 +1,12 @@
+#loadingPageWrapper{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#loadingSpinner{
+    height: 10rem;
+    width: 10rem;
+}

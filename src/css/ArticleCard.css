@@ -1,0 +1,42 @@
+#article-card{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: fit-content;
+    background-color: #F7B787;
+    border: #EE7214;
+    border-style: solid;
+    margin: 1rem;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+#articleCardImg{
+border-radius: 2rem;
+margin-bottom: 1rem;
+width: 95%;
+}
+
+#articleCardInfo{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    border: #EE7214;
+    border-style: solid;
+    border-radius: 1rem;
+    background-color: whitesmoke;
+    width: 95%;
+
+}
+
+#articleCardButtonContainer{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+width: 40%;
+}
