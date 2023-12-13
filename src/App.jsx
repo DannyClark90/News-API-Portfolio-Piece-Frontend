@@ -6,6 +6,7 @@ import Header from './Components/Header'
 import Home from './Page-Components/Home'
 import fetchApiData from './api';
 import AllArticles from './Page-Components/AllArticles';
+import Article from './Page-Components/Article'
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home articles={articles}/>}/>
           <Route path="/all-articles" element={<AllArticles articles={articles}/>}/>
+          <Route path={`/all-articles/:article_id`} element={<Article/>}/>
         </Routes>
       </>
     )
