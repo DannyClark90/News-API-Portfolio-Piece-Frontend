@@ -1,0 +1,36 @@
+.singleArticle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 95%;
+    height: fit-content;
+    background-color: #F7B787;
+    border: #EE7214;
+    border-style: solid;
+    margin: 0;
+    margin-top: 1.5rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    padding-top: 0.5rem;
+}
+
+#articleInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 95%;
+    height: fit-content;
+    background-color: whitesmoke;
+    border: #EE7214;
+    border-style: solid;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    padding: 1rem;;
+}
+
+#singleArticleImg{
+    border-radius: 2rem;
+    width: 95%;
+}
