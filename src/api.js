@@ -1,8 +1,10 @@
 import axios from "axios";
 
-const getAllArticles = () => {
-    return axios.get("https://news-api-portfolio-piece.onrender.com/api/articles")
-    .then((articles) => {return articles.data.articles})
-};
+const fetchApiData = axios.create({
+    baseURL: 'https://news-api-portfolio-piece.onrender.com/api',
+    headers: {
+        'Accept': 'application/json'
+    }
+  });
 
-export default getAllArticles
+  export default fetchApiData

@@ -4,7 +4,7 @@ import Loading from './Page-Components/Loading'
 import './css/App.css'
 import Header from './Components/Header'
 import Home from './Page-Components/Home'
-import getAllArticles from './api';
+import fetchApiData from './api';
 import AllArticles from './Page-Components/AllArticles';
 
 
@@ -13,8 +13,8 @@ function App() {
   const[isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-     getAllArticles()
-     .then((articles) => {setArticles(articles)})
+     fetchApiData.get('/articles')
+     .then((articles) => {setArticles(articles.data.articles)})
      setIsLoading(false)
   }, []);
 
