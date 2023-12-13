@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import dayjs from "dayjs";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../css/Style.css";
@@ -19,6 +20,8 @@ const Article = () => {
     setIsLoading(false);
   }, []);
 
+  const datePosted = dayjs(article.created_at).format('DD/MM/YYYY')
+
   if (isLoading) {
     return <Loading />;
   } else {
@@ -31,7 +34,7 @@ const Article = () => {
           <section id="articleInfo">
             <p className='text-black font-bold'>Topic: <span className='text-black font-medium'>{article.topic}</span></p>
             <p className='text-black font-bold '>Author: <span className='text-black font-medium'>{article.author}</span></p>
-            <p className='text-black font-bold'>Posted: <span className='text-black font-medium'>{article.created_at}</span></p>
+            <p className='text-black font-bold'>Posted: <span className='text-black font-medium'>{datePosted}</span></p>
             <p className="text-black my-3">{article.body}</p>
           </section>
           <button>
