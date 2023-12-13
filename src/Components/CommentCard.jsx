@@ -1,6 +1,7 @@
 import '../css/CommentCard.css'
 import dayjs from "dayjs";
 import Loading from '../Page-Components/Loading';
+import Image from '../assets/Like.png'
 
 const CommentCard = ({comment}) => {
     const datePosted = dayjs(comment.created_at).format('DD/MM/YYYY')
@@ -8,7 +9,6 @@ const CommentCard = ({comment}) => {
         return <Loading/>
     }
     else {
-
         return(
             <>
             <article id="commentCard">
@@ -18,9 +18,9 @@ const CommentCard = ({comment}) => {
                     <p className='text-black'>{comment.body}</p>
                 </section>
                 <button>
-                    <img src="../assets/like.png" alt="Thumbs Up; like Button" className='h-11'/>
-                    <p className='text-black font-bold'>{comment.votes} Likes</p>
+                <img src={Image} alt="Thumbs Up; like Button" className='h-11'/>
                 </button>
+                <p className='text-black font-bold'>{comment.votes} Likes</p>
             </article>
             
             </>

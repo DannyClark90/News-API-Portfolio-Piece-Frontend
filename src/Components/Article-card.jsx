@@ -31,8 +31,8 @@ const ArticleCard = ({article}) => {
         </Link>    
                 <button>
                 <img src="src/assets/Like.png" alt="Thumbs Up; like Button" className='h-11'/>
-                <p className='text-black font-bold'>Likes:{article.votes}</p>
                 </button>
+                <p className='text-black font-bold'>{article.votes} Likes</p>
         </div>
         </section>
         </>
