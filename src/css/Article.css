@@ -6,16 +6,17 @@
     width: 95%;
     height: fit-content;
     background-color: #F7B787;
-    border: #EE7214;
+    border-color: black;
     border-style: solid;
     margin: 0;
     margin-top: 1.5rem;
+    margin-bottom: 2rem;
     border-radius: 1rem;
     padding: 1rem;
     padding-top: 0.5rem;
 }
 
-#articleInfo{
+.articleInfo{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,14 +24,19 @@
     width: 95%;
     height: fit-content;
     background-color: whitesmoke;
-    border: #EE7214;
+    border: black;
     border-style: solid;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     border-radius: 1rem;
     padding: 1rem;;
 }
 
-#singleArticleImg{
-    border-radius: 2rem;
+#commentCardContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
     width: 95%;
 }

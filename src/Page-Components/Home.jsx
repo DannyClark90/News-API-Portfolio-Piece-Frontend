@@ -7,7 +7,6 @@ import ArticleCard from '../Components/Article-card';
 import getAllArticles from '../api';
 
 const Home = ({articles}) => {
-    
         return(
             <>
             <div className='page-container'>
