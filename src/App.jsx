@@ -7,6 +7,7 @@ import Home from './Page-Components/Home'
 import fetchApiData from './api';
 import AllArticles from './Page-Components/AllArticles';
 import Article from './Page-Components/Article'
+import UserLogin from './Page-Components/UserLogin';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/" element={<Home articles={articles}/>}/>
           <Route path="/all-articles" element={<AllArticles articles={articles}/>}/>
           <Route path={`/all-articles/:article_id`} element={<Article/>}/>
+          <Route path={`/user-login`} element={<UserLogin/>}/>
         </Routes>
       </>
     )

@@ -1,0 +1,31 @@
+#userCard{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: fit-content;
+    background-color: #EE7214;
+    border: black;
+    border-style: solid;
+    margin: 1rem;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+#userBody{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: fit-content;
+    background-color: whitesmoke;
+    border: black;
+    border-style: solid;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
