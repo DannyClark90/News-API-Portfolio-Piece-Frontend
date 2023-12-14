@@ -9,12 +9,14 @@ import fetchApiData from "../api";
 import CommentCard from "../Components/CommentCard";
 import Image from '../assets/Like.png'
 import Image2 from '../assets/Dislike.png'
+import { handleUpVoteClick, handleDownVoteClick } from "../Utils/utils";
 
 const Article = () => {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [comments, setComments] = useState([])
+  const [votes, setVotes] = useState(0)
 
   useEffect(() => {
       fetchApiData.get(`/articles/${article_id}/comments`)
@@ -25,6 +27,7 @@ const Article = () => {
   useEffect(() => {
     fetchApiData.get(`/articles/${article_id}`).then(({data}) => {
       setArticle(data.article);
+      setVotes(data.article.votes)
     });
     setIsLoading(false);
   }, []);
@@ -48,16 +51,25 @@ const Article = () => {
   }
 
   const upVote = (articleId) => {
-    fetchApiData.patch(`/articles/${articleId}`, {inc_votes:1}).then(({data}) => {
-      setArticle(data.updatedArticle)})
-  };
+    setVotes((currentVotes) => {return currentVotes + 1}) 
+    handleUpVoteClick(articleId)
+    .catch((err) => {
+      if (err) {
+        setVotes((currentVotes) => {return currentVotes - 1}) 
+      }
+    })}
 
   const downVote = (articleId) => {
-    fetchApiData.patch(`/articles/${articleId}`, {inc_votes:-1}).then(({data}) => {
-      setArticle(data.updatedArticle)})
+    setVotes((currentVotes) => {return currentVotes - 1})  
+    handleDownVoteClick(articleId)
+    .catch((err) => {
+      if (err) {
+        setVotes((currentVotes) => {return currentVotes + 1}) 
+      }
+    })
   };
 
-
+  console.log(votes);
   if (isLoading) {
     return <Loading/>;
   } else {
@@ -83,7 +95,7 @@ const Article = () => {
               <p className="text-black font-bold">Upvote</p>
             </div>
             
-            <p className='text-black font-bold'>{article.votes} Article Likes</p>
+            <p className='text-black font-bold'>{votes} Article Likes</p>
 
             <div id="downvoteButton">
               <button onClick={() => {downVote(article_id)}}>
