@@ -17,6 +17,13 @@ function classNames(...classes) {
 
 export default function Header() {
   const { signedInUser, setSignedInUser } = useContext(UserContext)
+  const [isSignedIn, setIsSignedIn] = useState(true)
+
+  const signOutClickHandler = (isSignedIn) => {
+    if(isSignedIn === false){
+      setSignedInUser("Sign In")
+    }
+  }
 
   return (
     <Disclosure as="nav" className='bg-NcNews-green'>
@@ -80,7 +87,7 @@ export default function Header() {
 
                       <Menu.Item>
                         {({ active }) => (
-                        <p onClick={setSignedInUser("Sign In")} className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}>Sign Out</p> 
+                        <p onClick={() => {signOutClickHandler(false)}} className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}>Sign Out</p> 
                         )}
                       </Menu.Item>
                     </Menu.Items>
