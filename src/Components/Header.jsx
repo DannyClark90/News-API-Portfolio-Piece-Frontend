@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import '../css/Header.css'
+import { useState, useContext } from 'react'
+import { UserContext } from './UserContext'
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
   { name: 'All Articles', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
 ]
 
 function classNames(...classes) {
@@ -16,6 +16,8 @@ function classNames(...classes) {
 }
 
 export default function Header() {
+  const { signedInUser, setSignedInUser } = useContext(UserContext)
+
   return (
     <Disclosure as="nav" className='bg-NcNews-green'>
       {({ open }) => (
@@ -57,7 +59,6 @@ export default function Header() {
                         src="src/assets/Profile Button.png"
                         alt=""
                       />
-                  
                     </Menu.Button>
                   </div>
 
@@ -73,32 +74,13 @@ export default function Header() {
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Your Profile
-                          </a>
+                        <Link to={`/user-login`} className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}>Sign In</Link> 
                         )}
                       </Menu.Item>
+
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Settings
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Sign out
-                          </a>
+                        <p onClick={setSignedInUser("Sign In")} className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}>Sign Out</p> 
                         )}
                       </Menu.Item>
                     </Menu.Items>
@@ -106,6 +88,10 @@ export default function Header() {
                 </Menu>
               </div>
             </div>
+          </div>
+
+          <div className='flex justify-end px-6'>
+          <p className='font-bold'>{signedInUser}</p>
           </div>
           
           <Link to='/'>

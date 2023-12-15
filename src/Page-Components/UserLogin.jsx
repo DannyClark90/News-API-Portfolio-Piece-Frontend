@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import fetchApiData from "../api";
 import '../css/Style.css'
 import Loading from "./Loading";
@@ -6,7 +6,6 @@ import UserCard from "../Components/UserCard";
 
 const UserLogin = () => {
     const [users, setUsers] = useState([])
-    
     useEffect(() =>{
         fetchApiData.get('/users')
         .then(({data}) =>{

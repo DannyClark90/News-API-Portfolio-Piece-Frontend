@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
+import { UserContext } from './UserContext';
+import { useContext, useState } from 'react';
 import Loading from '../Page-Components/Loading';
 import '../css/UserCard.css'
 
 const UserCard = ({user}) => {
+    const { signedInUser, setSignedInUser } = useContext(UserContext)
 
     if(!Object.keys(user).length){
         return <Loading/>
@@ -19,9 +22,7 @@ const UserCard = ({user}) => {
                     </section>
             </div>
             <div id='logInButtonContainer'>
-            <Link to={`/all-articles`}>
-              <button type="button" className="px-6 py-3.5 text-base font-bold text-white bg-button-red hover:bg-button-red-hover rounded-lg text-center hover:shadow-xl">Log In</button>
-          </Link>
+              <button onClick={() => {setSignedInUser(user.name)}} type="button" className="px-6 py-3.5 text-base font-bold text-white bg-button-red hover:bg-button-red-hover rounded-lg text-center hover:shadow-xl">Log In</button>
             </div>
         </section>
         </>
