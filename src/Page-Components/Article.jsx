@@ -8,6 +8,7 @@ import Loading from "./Loading";
 import fetchApiData from "../api";
 import CommentCard from "../Components/CommentCard";
 import Image from '../assets/Like.png'
+import CommentAdder from "../Components/CommentAdder";
 
 const Article = () => {
   const { article_id } = useParams();
@@ -71,6 +72,9 @@ const Article = () => {
 
           <div id="commentCardContainer">
             <h3 className="text-black font-bold text-lg py-3">Comments</h3>
+          <div id="commentAdderContainer">
+            <CommentAdder/>
+          </div>
           {areThereComments()}
           </div>
           
