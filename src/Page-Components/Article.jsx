@@ -27,7 +27,7 @@ const Article = () => {
       setArticle(data.article);
     });
     setIsLoading(false);
-  }, []);
+  }, [setComments]);
 
   const datePosted = dayjs(article.created_at).format('DD/MM/YYYY')
 
@@ -41,7 +41,7 @@ const Article = () => {
         return (
           <ul>
           {comments.map((comment) => {return (
-            <li key={comment.comment_id}><CommentCard comment={comment}/></li>)})
+            <li key={comment.comment_id}><CommentCard comment={comment} setComments={setComments}/></li>)})
           }
           </ul>
         )
@@ -73,7 +73,7 @@ const Article = () => {
           <div id="commentCardContainer">
             <h3 className="text-black font-bold text-lg py-3">Comments</h3>
           <div id="commentAdderContainer">
-            <CommentAdder/>
+            <CommentAdder articleId={article_id} setComments={setComments}/>
           </div>
           {areThereComments()}
           </div>

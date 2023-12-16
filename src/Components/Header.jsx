@@ -17,7 +17,6 @@ function classNames(...classes) {
 
 export default function Header() {
   const { signedInUser, setSignedInUser } = useContext(UserContext)
-  const [isSignedIn, setIsSignedIn] = useState(true)
 
   const signOutClickHandler = (isSignedIn) => {
     if(isSignedIn === false){

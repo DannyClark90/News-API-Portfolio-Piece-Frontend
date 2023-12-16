@@ -23,7 +23,7 @@ const UserCard = ({user}) => {
             </div>
             <div id='logInButtonContainer'>
                 <Link to={`/signed-in`}>
-                    <button onClick={() => {setSignedInUser(user.name)}} type="button" className="px-6 py-3.5 text-base font-bold text-white bg-button-red hover:bg-button-red-hover rounded-lg text-center hover:shadow-xl">Log In</button>
+                    <button onClick={() => {setSignedInUser(user.username)}} type="button" className="px-6 py-3.5 text-base font-bold text-white bg-button-red hover:bg-button-red-hover rounded-lg text-center hover:shadow-xl">Log In</button>
                 </Link>            
             </div>
         </section>
