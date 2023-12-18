@@ -1,0 +1,15 @@
+#commentAdder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+#newComment{
+    width: 100%;
+    border-color: black;
+    border-style: solid;
+    border-radius: 1rem;
+    padding: 1rem;
+}

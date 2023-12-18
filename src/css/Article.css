@@ -40,3 +40,14 @@
     padding: 0;
     width: 95%;
 }
+
+#commentAdderContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    flex-wrap: wrap;
+    height: fit-content;
+    width: 100%;
+
+}

@@ -1,0 +1,12 @@
+.signedInPageWrapper{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signInConfirmationTick{
+    height: 10rem;
+    width: 10rem;
+}
