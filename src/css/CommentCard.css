@@ -17,10 +17,10 @@
 #commentCard{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
-    width: 95%;
+    width: 60%;
     height: fit-content;
     background-color: #BE6F32;
     border: black;
@@ -36,7 +36,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 95%;
+    width: 80%;
     height: fit-content;
     background-color: whitesmoke;
     border: black;
@@ -44,4 +44,6 @@
     border-radius: 1rem;
     padding: 1rem;
     margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem
 }
