@@ -8,7 +8,7 @@ import { UserContext } from './UserContext'
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
-  { name: 'All Articles', href: '#', current: false },
+  { name: 'All Articles', href: '../all-articles', current: false }
 ]
 
 function classNames(...classes) {
