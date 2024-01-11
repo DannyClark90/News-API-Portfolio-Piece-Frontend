@@ -1,28 +1,12 @@
-#articleButtonContainer{
+#userCard{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 0.5rem;
-}
-
-#articleVoteButton{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: fit-content;
-}
-
-#commentCard{
-    display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 95%;
     height: fit-content;
-    background-color: #BE6F32;
+    background-color: #EE7214;
     border: black;
     border-style: solid;
     margin: 1rem;
@@ -30,13 +14,13 @@
     padding: 1rem;
 }
 
-#commentBody{
+#userBody{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 95%;
     height: fit-content;
     background-color: whitesmoke;
     border: black;
@@ -44,6 +28,4 @@
     border-radius: 1rem;
     padding: 1rem;
     margin-bottom: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem
 }
