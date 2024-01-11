@@ -20,12 +20,14 @@
     /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 97%;
     height: fit-content;
     background-color: #BE6F32;
     border: black;
     border-style: solid;
     margin: 1rem;
+    margin-left: 0;
+    margin-right: 0;
     border-radius: 1rem;
     padding: 1rem;
 }
